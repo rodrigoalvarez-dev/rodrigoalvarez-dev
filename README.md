@@ -33,6 +33,6 @@ I like systems, silence, and things that make sense.
 
 ---
 
-📫 You can find more about me here:
+You can find more about me here:
 - 🌐 https://rodrigoalvarez.dev
 - 💼 LinkedIn: https://www.linkedin.com/in/rodrigoalvarez-dev
