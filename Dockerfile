@@ -4,17 +4,16 @@ FROM php:8.4-fpm-alpine
 RUN apk add --no-cache \
     bash git unzip icu-dev libzip-dev postgresql-dev \
     libpng-dev libjpeg-turbo-dev freetype-dev \
+    rabbitmq-c rabbitmq-c-dev \
   && apk add --no-cache --virtual .build-deps $PHPIZE_DEPS
 
-# PHP extensions
+# PHP extensions + PECL
 RUN docker-php-ext-configure gd --with-freetype --with-jpeg \
   && docker-php-ext-install -j$(nproc) \
-    intl \
-    pdo_pgsql \
-    zip \
-    gd \
-    opcache \
-  && apk del .build-deps
+    intl pdo_pgsql zip gd opcache \
+  && pecl install amqp \
+  && docker-php-ext-enable amqp \
+  && apk del .build-deps rabbitmq-c-dev
 
 # PHP settings
 RUN { \

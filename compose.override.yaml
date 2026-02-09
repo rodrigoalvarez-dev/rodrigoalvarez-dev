@@ -1,7 +1,4 @@
-version: '3'
-
 services:
-###> symfony/mailer ###
   mailer:
     image: axllent/mailpit
     ports:
@@ -10,10 +7,12 @@ services:
     environment:
       MP_SMTP_AUTH_ACCEPT_ANY: 1
       MP_SMTP_AUTH_ALLOW_INSECURE: 1
-###< symfony/mailer ###
 
-###> doctrine/doctrine-bundle ###
-  database:
+  node:
+    image: node:22-alpine
+    working_dir: /var/www/html
+    volumes:
+      - ./:/var/www/html
+    command: sh -lc "npm install && npm run dev -- --host 0.0.0.0 --port 5173"
     ports:
-      - "3306:3306"
-###< doctrine/doctrine-bundle ###
+      - "5173:5173"

@@ -1,0 +1,29 @@
+{
+  "name": "html",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Project Manager on the outside, Web Engineer on the inside.",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rodrigoalvarez-dev/rodrigoalvarez-dev.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rodrigoalvarez-dev/rodrigoalvarez-dev/issues"
+  },
+  "homepage": "https://github.com/rodrigoalvarez-dev/rodrigoalvarez-dev#readme",
+  "devDependencies": {
+    "vite": "^7.3.1"
+  }
+}
